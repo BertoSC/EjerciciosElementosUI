@@ -6,9 +6,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Ejercicio8 {
-    public static void main(String[] args) {
 
-        JFrame ventana = new JFrame("Ejercicio 7");
+    public Ejercicio8() {
+        ejecutarEj8();
+
+    }
+
+    private void ejecutarEj8() {
+        JFrame ventana = new JFrame("Ejercicio 8");
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setSize(400, 400);
 
@@ -26,10 +31,13 @@ public class Ejercicio8 {
 
         JRadioButton pago1 = new JRadioButton("Transferencia bancaria");
         pago1.setBackground(Color.white);
+        pago1.setActionCommand("Transferencia bancaria");
         JRadioButton pago2 = new JRadioButton("Paypal");
         pago2.setBackground(Color.white);
+        pago2.setActionCommand("Paypal");
         JRadioButton pago3 = new JRadioButton("Tarjeta de crédito");
         pago3.setBackground(Color.white);
+        pago3.setActionCommand("Tarjeta de crédito");
 
         ButtonGroup opciones = new ButtonGroup();
 
@@ -72,23 +80,21 @@ public class Ejercicio8 {
         panel.add(botonPress,gbd);
 
         botonPress.addActionListener(new ActionListener() {
-             @Override
-             public void actionPerformed(ActionEvent e) {
-                 Button opciónSel = (Button) opciones.getSelection();
-                 String texto = opciónSel.text
+            public void actionPerformed(ActionEvent e) {
+                ButtonModel seleccion = opciones.getSelection();
 
-                 if ()
-
-             }
-           }
-        );
-
+                // Comprobar cuál de los botones está seleccionado y obtener su texto
+                if (seleccion != null) {
+                    String s = seleccion.getActionCommand();
+                    System.out.println("Has seleccionado pago mediante "+s);
+                } else {
+                    System.out.println("Ninguna opción seleccionada");
+                }
+            }
+        });
 
         ventana.add(panel);
         ventana.setVisible(true);
-
-
-
-
     }
 }
+

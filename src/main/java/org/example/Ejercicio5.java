@@ -6,7 +6,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Ejercicio5 {
-    public static void main(String[] args) {
+
+    public Ejercicio5(){
+        ejecutarEj5();
+    }
+
+    private void ejecutarEj5() {
         JFrame ventana = new JFrame("Ejercicio 5");
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setSize(400, 400);
@@ -40,5 +45,6 @@ public class Ejercicio5 {
 
         ventana.add(panel);
         ventana.setVisible(true);
+
     }
 }

@@ -6,7 +6,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Ejercicio4 {
-    public static void main(String[] args) {
+
+    public Ejercicio4(){
+        ejecutarEj4();
+    }
+
+    public void ejecutarEj4(){
         JFrame ventana = new JFrame("Ejercicio 4");
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setSize(400, 400);
@@ -67,3 +72,4 @@ public class Ejercicio4 {
         ventana.setVisible(true);
     }
 }
+

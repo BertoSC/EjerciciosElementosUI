@@ -6,7 +6,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Ejercicio7 {
-    public static void main(String[] args) {
+
+    public Ejercicio7(){
+        ejecutarEJ7();
+    }
+
+    public void ejecutarEJ7(){
         JFrame ventana = new JFrame("Ejercicio 7");
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setSize(400, 400);

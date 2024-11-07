@@ -6,7 +6,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Ejercicio3 {
-    public static void main(String[] args) {
+
+    public Ejercicio3(){
+
+        ejecutarEj3();
+
+    }
+
+    private void ejecutarEj3() {
         JFrame ventana = new JFrame("Ejercicio 3");
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setSize(400, 400);
@@ -17,9 +24,15 @@ public class Ejercicio3 {
 
         panel.setBackground(Color.white);
 
-        JTextField ventanaNom = new JTextField(15);
+        JLabel nombre = new JLabel("Introduce tu nombre", SwingConstants.CENTER);
         gbd.gridx = 0;
         gbd.gridy = 0;
+        gbd.insets = new Insets(6, 6, 6, 6);
+        panel.add(nombre, gbd);
+
+        JTextField ventanaNom = new JTextField(15);
+        gbd.gridx = 0;
+        gbd.gridy = 1;
         gbd.insets = new Insets(6, 6, 6, 6);
         gbd.fill = GridBagConstraints.HORIZONTAL;
         panel.add(ventanaNom, gbd);
@@ -31,18 +44,20 @@ public class Ejercicio3 {
 
         botonPress.addActionListener(new ActionListener() {
             @Override
-                    public void actionPerformed(ActionEvent e) {
-                        String nombre = ventanaNom.getText();
-                        System.out.println("Tu nombre es: "+nombre);
-                    }
-                });
+            public void actionPerformed(ActionEvent e) {
+                String nombre = ventanaNom.getText();
+                System.out.println("Tu nombre es: "+nombre);
+            }
+        });
 
         gbd.gridx = 0;
-        gbd.gridy = 1;
+        gbd.gridy = 2;
         gbd.insets = new Insets(6, 6, 6,6);
         panel.add (botonPress, gbd);
 
         ventana.add(panel);
         ventana.setVisible(true);
     }
+
+
 }
